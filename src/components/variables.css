@@ -18,7 +18,7 @@
    * Layout
    * ======================================================================== */
 
-  --max-content-width: 1000px;
+  --max-content-width: 600px;
 
   /*
    * Media queries breakpoints
@@ -28,4 +28,34 @@
   --screen-sm-min: 768px;  /* Small screen / tablet */
   --screen-md-min: 992px;  /* Medium screen / desktop */
   --screen-lg-min: 1200px; /* Large screen / wide desktop */
+
+
+  /*
+   * Colors
+   * ======================================================================== */
+
+  --header-bg-color: #373277;
+
+  --clr-navy: #001F3F;
+  --clr-blue: #0074D9;
+  --clr-aqua: #7FDBFF;
+  --clr-teal: #39CCCC;
+  --clr-olive: #3D9970;
+  --clr-green: #2ECC40;
+  --clr-lime: #01FF70;
+  --clr-yellow: #FFDC00;
+  --clr-orange: #FF851B;
+  --clr-red: #FF4136;
+  --clr-fuchsia: #F012BE;
+  --clr-purple: #B10DC9;
+  --clr-maroon: #85144B;
+  --clr-white: #FFFFFF;
+  --clr-silver: #DDDDDD;
+  --clr-gray: #AAAAAA;
+  --clr-black: #111111;
+
+  /*
+   * Custom
+   * ======================================================================== */
+  --todo-list-seperator: 1px solid var(--clr-silver);
 }

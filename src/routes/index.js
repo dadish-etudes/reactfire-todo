@@ -12,11 +12,8 @@ import App from '../components/App';
 
 // Child routes
 import home from './home';
-import contact from './contact';
-import login from './login';
-import register from './register';
-import content from './content';
-import notFound from './notFound';
+import filter from './filter';
+import error from './error';
 
 export default {
 
@@ -25,32 +22,18 @@ export default {
   // keep in mind, routes are evaluated in order
   children: [
     home,
-    contact,
-    login,
-    register,
+    filter,
 
     // place new routes before...
-    content,
-    notFound,
+    error,
   ],
 
-  async action({ next, context }) {
-    let route;
-
-    // Execute each child route until one of them return the result
-    // TODO: move this logic to the `next` function
-    do {
-      route = await next();
-    } while (!route);
-
-    return {
-      ...route,
-
-      // Override the result of child route with extensions
-      title: `${route.title || 'Untitled Page'} - www.reactstarterkit.com`,
-      description: route.description || '',
-      component: <App context={context}>{route.component}</App>,
-    };
+  async action({ next, render, context }) {
+    const component = await next();
+    if (component === undefined) return component;
+    return render(
+      <App context={context}>{component}</App>
+    );
   },
 
 };

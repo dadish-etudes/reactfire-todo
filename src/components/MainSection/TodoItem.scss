@@ -1,0 +1,92 @@
+
+/**
+ * TodoItem style
+ */
+
+@import "../variables";
+
+.root {
+  font-size: 1rem;
+  margin: 0;
+  border-bottom: $todo-list-seperator;
+	position: relative;
+	overflow: hidden;
+
+  /**
+   * Flex settings
+   */
+  // display: flex;
+  // align-items : center;
+  // flex-direction : row;
+  // justify-content: space-between;
+}
+
+.label{
+	display: block;
+	padding: 0.5rem;
+	padding-left: 2.75rem;
+	padding-right: 2rem;
+	position: relative;
+	z-index: 1;
+}
+
+.icon{
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	z-index: 2;
+	top: 0px;
+	bottom: 0px;
+	left: 0.5rem;
+	margin: auto;
+	&:hover{
+		fill: $clr-silver - #111;
+		cursor: pointer;
+	}
+	&:active{
+		fill: $clr-green + #222;
+	}
+}
+
+.checkBox{
+	fill: $clr-silver;
+}
+
+.check{
+	fill: $clr-green - #222;
+	&:hover{
+		fill: $clr-green - #222;
+	}
+}
+
+.delete{
+	width: 20px;
+	height: 20px;
+	fill: $clr-silver;
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	right: 0.5rem;
+	margin: auto;
+	&:hover{
+		fill: $clr-red - #222;
+		cursor: pointer;
+	}
+	&:active{
+		fill: $clr-red - #333;
+	}
+	// show only when parent element is hovered
+	opacity: 0;
+}
+
+.label{
+	&:hover{
+		.delete{
+			opacity: 1;
+		}
+	}
+}
+
+.hidden{
+	display: none;
+}

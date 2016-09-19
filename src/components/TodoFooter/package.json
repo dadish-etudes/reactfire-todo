@@ -1,0 +1,6 @@
+{
+  "name": "TodoFooter",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./TodoFooter.js"
+}

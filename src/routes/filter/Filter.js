@@ -7,21 +7,6 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-import React from 'react';
-import NotFound from './NotFound';
+import TodoApp from '../../components/TodoApp';
 
-const title = 'Page Not Found';
-
-export default {
-
-  path: '*',
-
-  action() {
-    return {
-      title,
-      component: <NotFound title={title} />,
-      status: 404,
-    };
-  },
-
-};
+export default TodoApp;

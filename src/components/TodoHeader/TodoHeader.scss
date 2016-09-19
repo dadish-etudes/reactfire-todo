@@ -1,0 +1,32 @@
+
+@import '../variables.scss';
+
+.root {
+	border: $todo-list-seperator;
+	position: relative;
+	overflow: hidden;
+	font-size: 1rem;
+}
+
+.icon{
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0.5rem;
+	margin: auto;
+	z-index: 1;
+	fill: $clr-silver;
+	&:hover{
+		fill: $clr-silver - #222;
+		cursor: pointer;
+	}	
+}
+
+.iconChecked{
+	fill: $clr-green - #222;
+	&:hover{
+		fill: $clr-green - #222;
+	}	
+}

@@ -24,7 +24,9 @@ html {
 body {
   display: table-cell;
   vertical-align: middle;
-  padding: 2em;
+  /* stylelint-disable */
+  margin: 2em auto;
+  /* stylelint-enable */
 }
 
 h1 {

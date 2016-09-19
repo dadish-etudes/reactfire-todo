@@ -11,20 +11,10 @@ import React, { Component, PropTypes } from 'react';
 import emptyFunction from 'fbjs/lib/emptyFunction';
 import s from './App.css';
 import Header from '../Header';
-import Feedback from '../Feedback';
 import Footer from '../Footer';
+import TodoApp from '../TodoApp';
 
 class App extends Component {
-
-  static propTypes = {
-    context: PropTypes.shape({
-      insertCss: PropTypes.func,
-      setTitle: PropTypes.func,
-      setMeta: PropTypes.func,
-    }),
-    children: PropTypes.element.isRequired,
-    error: PropTypes.object,
-  };
 
   static childContextTypes = {
     insertCss: PropTypes.func.isRequired,
@@ -51,14 +41,15 @@ class App extends Component {
   }
 
   render() {
-    return !this.props.error ? (
+    if (this.props.error) return this.props.children;
+
+    return (
       <div>
         <Header />
         {this.props.children}
-        <Feedback />
         <Footer />
       </div>
-    ) : this.props.children;
+    );
   }
 
 }

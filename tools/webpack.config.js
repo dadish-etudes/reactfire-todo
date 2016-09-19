@@ -91,7 +91,14 @@ const config = {
         test: /\.scss$/,
         loaders: [
           'isomorphic-style-loader',
-          `css-loader?${JSON.stringify({ sourceMap: DEBUG, minimize: !DEBUG })}`,
+          `css-loader?${JSON.stringify({
+            sourceMap: DEBUG,
+            // CSS Modules https://github.com/css-modules/css-modules
+            modules: true,
+            localIdentName: DEBUG ? '[name]_[local]_[hash:base64:3]' : '[hash:base64:4]',
+            // CSS Nano http://cssnano.co/options/
+            minimize: !DEBUG,
+          })}`,
           'postcss-loader?pack=sass',
           'sass-loader',
         ],
@@ -252,7 +259,7 @@ const clientConfig = extend(true, {}, config, {
 
   // Choose a developer tool to enhance debugging
   // http://webpack.github.io/docs/configuration.html#devtool
-  devtool: DEBUG ? 'source-map' : false,
+  devtool: DEBUG ? 'cheap-module-eval-source-map' : false,
 });
 
 //
